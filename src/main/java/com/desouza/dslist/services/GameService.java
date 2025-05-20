@@ -22,7 +22,7 @@ public class GameService {
     @Transactional(readOnly = true)
     public GameDTO findById(Long id) {
         Game result = gameRepository.findById(id)
-            .orElseThrow(() -> new EntityNotFoundException("Game with ID " + id + " not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Game with ID " + id + " not found"));
         return new GameDTO(result);
     }
 
